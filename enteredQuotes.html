@@ -1,0 +1,109 @@
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Quotes on File</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pcmystyle.css">
+
+    <!--    scripts-->
+    <script src="js/lib/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <script src="js/lib/bootstrap.bundle.min.js"></script>
+
+    <!--   MY scripts-->
+    <script src="js/jsfile.js"></script>
+
+    <style>
+        .card {
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            var localStorageItems = Object.entries(localStorage);
+            var htmlCode = "";
+
+            $(localStorageItems).each(function () {
+                if ($(this)[0].startsWith("quote")) {
+                    console.log($(this)[0]);
+                    console.log($(this)[1]);
+
+                    var quoteData = JSON.parse($(this)[1]);
+                    //var quoteAmount = "$" + $("#finalQuote").text; - this causes an error!
+                    var quoteAmount = "$" + $("finalQuote")
+
+                    htmlCode +=
+                        "<div class='container'>" +
+                        "<div class='row pb-4 pt-4' style='border-bottom: 1px solid rgba(0,0,0,.125);'>" +
+                        "<div class='col-md-6 '>" +
+                        "<div class='card-header' style='margin-left: -1rem; margin-right: -1rem;'><h3>Customer Information</h3></div>" +
+                        "<span class='d-block'><strong>First Name:</strong> " + quoteData['firstName'] + "</span>" +
+                        "<span class='d-block'><strong>Last Name:</strong> " + quoteData['lastName'] + "</span>" +
+                        "<span class='d-block'><strong>Address:</strong> " + quoteData['address'] + "</span>" +
+                        "<span class='d-block'><strong>City:</strong> " + quoteData['city'] + "</span>" +
+                        "<span class='d-block'><strong>Province:</strong> " + quoteData['province'] + "</span>" +
+                        "<span class='d-block'><strong>Postal Code:</strong> " + quoteData['postalCode'] + "</span>" +
+                        "<span class='d-block'><strong>Phone Number:</strong> " + quoteData['phone'] + "</span>" +
+                        "<span class='d-block'><strong>Email:</strong> " + quoteData['email'] + "</span>" +
+                        "</div>" +
+                        "<div class='col-md-6'>" +
+                        "<div class='card-header' style='margin-left: -1rem; margin-right: -1rem;'><h3>Driving Information</h3></div>" +
+                        "<span class='d-block'><strong>Accidents:</strong> " + quoteData['accidents'] + "</span>" +
+                        "<span class='d-block'><strong>Age:</strong> " + quoteData['age'] + "</span>" +
+                        "<span class='d-block'><strong>Driving Experience:</strong> " + quoteData['experience'] + "</span>" +
+                        "<span class='d-block'><strong>Insurance Quote:</strong> " + quoteAmount + "</span>" +
+
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>";
+                };
+
+            });
+
+            $("#quotesList").html(htmlCode);
+
+        });
+    </script>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1003.0" data-gr-ext-installed="">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Get a quote now!</a>
+
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="enteredQuotes.html">List of Entered Quotes</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <main role="main" class="container" style="padding-top: 5em">
+        <h1 style="text-align: center">List of Quotes</h1>
+        <div id="quotesList">
+        </div>
+    </main>
+</body>
+
+</html>
