@@ -50,3 +50,16 @@ Experience (Must be ≥0 and Age - Experience ≥ 16)
 
 Number of Accidents (Must be ≥0)
 
+Setup Instructions
+
+Prerequisites
+
+Ensure you have the following installed:
+
+Python (Version 3.7 or later)
+
+pip (Python package manager)
+
+Google Chrome (or another supported browser)
+
+ChromeDriver (or equivalent for your browser)
