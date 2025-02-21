@@ -42,7 +42,7 @@ Postal Code (Format: ANA NAN e.g., N2L 3G1)
 
 Phone Number (Formats: 123-123-1234 or (123)123-1234)
 
-Email Address (Format: username@domain.ext e.g., baljeet@mail.com)
+Email Address (Format: username@domain.ext e.g., xyz@gmail.com)
 
 Age (Must be ≥16)
 
