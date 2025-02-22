@@ -1,65 +1,43 @@
-Insurance Rate Calculator - System Testing with Selenium
+**Insurance Rate Calculator**
+**Overview**
+The Insurance Rate Calculator is a software application designed to calculate an individual's insurance rate based on their personal details, including age, driving experience, and accident history. It follows a set of business rules to determine whether an individual is eligible for insurance and, if so, calculates the appropriate rate based on specific criteria.
 
-Overview
+**Business Requirements**
+The insurance rate is determined based on the following criteria:
 
-This project involves system testing of a browser-based web application that calculates an individual's insurance rate based on their age, driving experience, and accident history. The testing will be performed using Selenium, ensuring that the application meets business requirements and validates user input correctly.
+**Eligibility:**
+If the driver has 3 or more accidents, they will not be eligible for insurance.
 
-Business Requirements
+**Base Rate:**
+No experience: $4000 annually.
+1-9 years of experience: $2500 annually.
+10+ years of experience: $1800 annually.
 
-The web application determines insurance eligibility and rates based on the following rules:
+**Discount:**
+If the driver is 30 years or older and has at least 2 years of driving experience, a 25% reduction in the base rate is applied.
 
-Insurance Eligibility
+**Key Features**
+Eligibility Check: Automatically checks if a user is eligible for insurance based on their accident history.
+Base Rate Calculation: Determines the base rate based on driving experience.
+Discount Application: Applies a 25% discount if the user meets the age and experience criteria.
+Input Validation: Ensures that all required fields are properly formatted and meet the business rules (e.g., valid postal code and phone number).
 
-If a driver has 3 or more accidents, they are not eligible for insurance.
+**Project Setup**
+**Prerequisites**
+To run this project, you need to have the following software installed:
 
-Otherwise, they are eligible.
+Apache (For hosting the application on a server)
+Git (For version control)
+Visual Studio Code
 
-Base Rate Calculation
+**Version Control**
 
-No driving experience → $4000 annually
+This project uses Git for source control, managed via GitHub.
 
-1 to 9 years of experience → $2500 annually
+Why Git?
 
-10 or more years of experience → $1800 annually
+Collaboration & Branching - Git allows multiple contributors to work on different features simultaneously without conflicts.
 
-Rate Reduction
+Version Tracking & Rollback - Every change is recorded, making it easy to revert to a previous state if necessary.
 
-If the driver is 30 years or older and has at least two years of driving experience, a 25% discount is applied to the base rate.
-
-Input Validation Rules
-
-The application includes the following mandatory input fields:
-
-First Name & Last Name
-
-Address
-
-City
-
-Province
-
-Postal Code (Format: ANA NAN e.g., N2L 3G1)
-
-Phone Number (Formats: 123-123-1234 or (123)123-1234)
-
-Email Address (Format: username@domain.ext e.g., xyz@gmail.com)
-
-Age (Must be ≥16)
-
-Experience (Must be ≥0 and Age - Experience ≥ 16)
-
-Number of Accidents (Must be ≥0)
-
-Setup Instructions
-
-Prerequisites
-
-Ensure you have the following installed:
-
-Python (Version 3.7 or later)
-
-pip (Python package manager)
-
-Google Chrome (or another supported browser)
-
-ChromeDriver (or equivalent for your browser)
+Integration with CI/CD - Git integrates well with Continuous Integration/Deployment tools to automate testing and deployment processes.
